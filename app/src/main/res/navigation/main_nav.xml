@@ -22,8 +22,5 @@
         <action
             android:id="@+id/action_detailsFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
-        <argument
-            android:name="current_character"
-            app:argType="com.diegoribeiro.marvelguide.model.Result" />
     </fragment>
 </navigation>

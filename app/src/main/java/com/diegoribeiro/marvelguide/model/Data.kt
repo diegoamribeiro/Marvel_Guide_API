@@ -12,7 +12,7 @@ data class Data(
     @SerializedName("offset")
     val offset: Int,
     @SerializedName("results")
-    val results: List<Character>,
+    val result: List<Character>,
     @SerializedName("total")
     val total: Int
 ): Parcelable

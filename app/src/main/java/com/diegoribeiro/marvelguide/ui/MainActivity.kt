@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
             val response = Repository.getAllCharacters()
             if (response.isSuccessful){
                 response.body()?.let {result->
-                    list.addAll(result.results)
+                    list.addAll(result.data.result)
                 }
             }
         }
