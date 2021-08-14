@@ -33,7 +33,6 @@ companion object {
                 .addQueryParameter("hash", "$ts$API_PRIVATE_KEY$API_PUBLIC_KEY".md5())
                 .build()
 
-
             chain.proceed(original.newBuilder().url(url).build())
         }
 
