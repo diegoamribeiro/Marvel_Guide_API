@@ -15,7 +15,7 @@
         >
 
         <ImageView
-            android:id="@+id/person"
+            android:id="@+id/tv_hero_name"
             android:layout_width="238dp"
             android:layout_height="238dp"
             android:layout_marginBottom="0dp"
@@ -34,13 +34,13 @@
             android:layout_width="238dp"
             android:layout_height="5dp"
             android:background="@color/red"
-            app:layout_constraintBottom_toTopOf="@+id/teste"
-            app:layout_constraintEnd_toEndOf="@+id/teste"
-            app:layout_constraintStart_toStartOf="@+id/teste"
-            app:layout_constraintTop_toBottomOf="@id/person"/>
+            app:layout_constraintBottom_toTopOf="@+id/card"
+            app:layout_constraintEnd_toEndOf="@+id/card"
+            app:layout_constraintStart_toStartOf="@+id/card"
+            app:layout_constraintTop_toBottomOf="@id/tv_hero_name"/>
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/teste"
+            android:id="@+id/card"
             style="@style/CardViewStyle"
             android:layout_width="238dp"
             android:layout_height="137dp"
