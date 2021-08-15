@@ -1,7 +1,8 @@
 package com.diegoribeiro.marvelguide.model
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
+
 
 @Parcelize
 data class Data(
@@ -12,7 +13,7 @@ data class Data(
     @SerializedName("offset")
     val offset: Int,
     @SerializedName("results")
-    val result: List<Character>,
+    val result: MutableList<Character>,
     @SerializedName("total")
     val total: Int
 ): Parcelable

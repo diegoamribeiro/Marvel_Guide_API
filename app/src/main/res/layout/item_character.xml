@@ -15,7 +15,7 @@
         >
 
         <ImageView
-            android:id="@+id/tv_hero_name"
+            android:id="@+id/iv_photo"
             android:layout_width="238dp"
             android:layout_height="238dp"
             android:layout_marginBottom="0dp"
@@ -27,23 +27,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            tools:src="@drawable/cap_ons_crd_01" />
+            tools:src="@drawable/cap_ons_crd_01"
+            android:contentDescription="@string/hero_image" />
 
         <View
             android:id="@+id/line"
             android:layout_width="238dp"
-            android:layout_height="5dp"
+            android:layout_height="8dp"
             android:background="@color/red"
             app:layout_constraintBottom_toTopOf="@+id/card"
             app:layout_constraintEnd_toEndOf="@+id/card"
             app:layout_constraintStart_toStartOf="@+id/card"
-            app:layout_constraintTop_toBottomOf="@id/tv_hero_name"/>
+            app:layout_constraintTop_toBottomOf="@id/iv_photo"/>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card"
             style="@style/CardViewStyle"
             android:layout_width="238dp"
-            android:layout_height="137dp"
+            android:layout_height="100dp"
             app:cardBackgroundColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -55,36 +56,21 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/hero_name"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_hero_name"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_bold"
                     android:textAllCaps="true"
-                    android:textSize="18sp"
                     android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.163"
+                    app:layout_constraintHorizontal_bias="0.202"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.132"
                     tools:text="Captain America" />
-
-                <TextView
-                    android:id="@+id/person_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:textAllCaps="true"
-                    android:textColor="@color/light_grey"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.02"
-                    app:layout_constraintStart_toStartOf="@+id/hero_name"
-                    app:layout_constraintTop_toBottomOf="@id/hero_name"
-                    app:layout_constraintVertical_bias="0.804"
-                    tools:text="Sam Wilson" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
