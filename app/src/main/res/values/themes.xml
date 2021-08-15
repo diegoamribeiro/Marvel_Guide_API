@@ -22,7 +22,7 @@
     </style>
 
     <style name="ShapeAppearanceOverlay.MaterialCardView.Cut" parent="CardView">
-        <item name="cornerSize">15%</item>
+        <item name="cornerSize">20%</item>
         <item name="cornerSizeTopLeft">0%</item>
         <item name="cornerSizeTopRight">0%</item>
         <item name="cornerSizeBottomLeft">0%</item>

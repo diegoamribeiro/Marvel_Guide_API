@@ -7,5 +7,9 @@ class Constants {
         const val API_PRIVATE_KEY = "eb5fd8c918986dcd74827372362e70e557844c83"
         const val TIME_STAMP = "1"
         const val HASH_KEY = "4b88898c372bbb60448ec953fff1a9ae"
+
+        //Images constants
+
+        const val STANDARD_LARGE  = "/standard_large"
     }
 }

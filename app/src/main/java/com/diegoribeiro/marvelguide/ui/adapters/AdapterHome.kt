@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.diegoribeiro.marvelguide.R
 import com.diegoribeiro.marvelguide.databinding.ItemCharacterBinding
 import com.diegoribeiro.marvelguide.model.Character
+import com.diegoribeiro.marvelguide.utils.Constants.Companion.STANDARD_LARGE
 import com.diegoribeiro.marvelguide.utils.DiffUtilsHome
 
 class AdapterHome : RecyclerView.Adapter<AdapterHome.HomeViewHolder>(){
@@ -25,7 +26,7 @@ class AdapterHome : RecyclerView.Adapter<AdapterHome.HomeViewHolder>(){
         holder.binding.apply {
             tvHeroName.text = heroList[position].name
             Glide.with(ivPhoto)
-                .load(heroList[position].thumbnail.path + ".${heroList[position].thumbnail.extension}")
+                .load(heroList[position].thumbnail.path +STANDARD_LARGE+ ".${heroList[position].thumbnail.extension}")
                 .placeholder(R.drawable.ic_person)
                 .into(ivPhoto)
         }

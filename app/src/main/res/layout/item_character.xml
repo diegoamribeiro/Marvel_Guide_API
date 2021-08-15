@@ -3,22 +3,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:padding="4dp"
+
         >
 
         <ImageView
             android:id="@+id/iv_photo"
-            android:layout_width="238dp"
-            android:layout_height="238dp"
-            android:layout_marginBottom="0dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:contentDescription="@string/hero_image"
             android:scaleType="centerCrop"
             app:cardBackgroundColor="@color/grey"
             app:layout_constraintBottom_toTopOf="@+id/line"
@@ -27,29 +28,27 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            tools:src="@drawable/cap_ons_crd_01"
-            android:contentDescription="@string/hero_image" />
+            tools:src="@drawable/cap_ons_crd_01" />
 
         <View
             android:id="@+id/line"
-            android:layout_width="238dp"
+            android:layout_width="180dp"
             android:layout_height="8dp"
             android:background="@color/red"
-            app:layout_constraintBottom_toTopOf="@+id/card"
             app:layout_constraintEnd_toEndOf="@+id/card"
             app:layout_constraintStart_toStartOf="@+id/card"
-            app:layout_constraintTop_toBottomOf="@id/iv_photo"/>
+            app:layout_constraintTop_toBottomOf="@id/iv_photo" />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card"
             style="@style/CardViewStyle"
-            android:layout_width="238dp"
-            android:layout_height="100dp"
+            android:layout_width="180dp"
+            android:layout_height="80dp"
             app:cardBackgroundColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/line" >
+            app:layout_constraintEnd_toEndOf="@+id/iv_photo"
+            app:layout_constraintStart_toStartOf="@+id/iv_photo"
+            app:layout_constraintTop_toBottomOf="@id/line">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -59,17 +58,18 @@
                     android:id="@+id/tv_hero_name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
                     android:fontFamily="@font/roboto_bold"
                     android:textAllCaps="true"
                     android:textColor="@color/white"
                     android:textSize="18sp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.202"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.285"
                     tools:text="Captain America" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
