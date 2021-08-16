@@ -18,12 +18,26 @@
 
     <style name="CardViewStyle" parent="Widget.MaterialComponents.CardView">
         <item name="shapeAppearance">@style/ShapeAppearanceOverlay.MaterialCardView.Cut</item>
-
     </style>
+
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="shapeAppearance">@style/ShapeAppearanceOverlay.MaterialButton.Cut</item>
+    </style>
+
+
 
     <style name="ShapeAppearanceOverlay.MaterialCardView.Cut" parent="CardView">
         <item name="cornerSize">20%</item>
         <item name="cornerSizeTopLeft">0%</item>
+        <item name="cornerSizeTopRight">0%</item>
+        <item name="cornerSizeBottomLeft">0%</item>
+        <item name="cornerFamily">cut</item>
+        <item name="cornerFamilyBottomRight">cut</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MaterialButton.Cut" parent="ButtonStyle">
+        <item name="cornerSize">20%</item>
+        <item name="cornerSizeTopLeft">20%</item>
         <item name="cornerSizeTopRight">0%</item>
         <item name="cornerSizeBottomLeft">0%</item>
         <item name="cornerFamily">cut</item>

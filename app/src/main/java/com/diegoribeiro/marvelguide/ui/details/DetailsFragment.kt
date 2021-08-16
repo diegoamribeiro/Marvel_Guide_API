@@ -5,18 +5,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.diegoribeiro.marvelguide.R
+import androidx.navigation.fragment.navArgs
+import com.diegoribeiro.marvelguide.databinding.FragmentHomeBinding
+import com.diegoribeiro.marvelguide.ui.details.DetailsFragmentArgs
 
 
 class DetailsFragment : Fragment() {
-
+    private val args: DetailsFragmentArgs by navArgs()
+    private lateinit var binding: FragmentHomeBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
 
 
-        return inflater.inflate(R.layout.fragment_details, container, false)
+        return binding.root
     }
 
 

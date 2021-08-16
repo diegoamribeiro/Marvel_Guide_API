@@ -2,12 +2,14 @@ package com.diegoribeiro.marvelguide.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.diegoribeiro.marvelguide.R
 import com.diegoribeiro.marvelguide.databinding.ItemCharacterBinding
 import com.diegoribeiro.marvelguide.model.Character
+import com.diegoribeiro.marvelguide.ui.home.HomeFragmentDirections
 import com.diegoribeiro.marvelguide.utils.Constants.Companion.STANDARD_LARGE
 import com.diegoribeiro.marvelguide.utils.DiffUtilsHome
 
@@ -29,6 +31,10 @@ class AdapterHome : RecyclerView.Adapter<AdapterHome.HomeViewHolder>(){
                 .load(heroList[position].thumbnail.path +STANDARD_LARGE+ ".${heroList[position].thumbnail.extension}")
                 .placeholder(R.drawable.ic_person)
                 .into(ivPhoto)
+        }
+        holder.itemView.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(heroList[position])
+            holder.itemView.findNavController().navigate(action)
         }
     }
 

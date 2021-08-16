@@ -16,14 +16,14 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.diegoribeiro.marvelguide.ui.DetailsFragment"
+        android:name="com.diegoribeiro.marvelguide.ui.details.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" >
-        <action
-            android:id="@+id/action_detailsFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
         <argument
             android:name="currentCharacter"
             app:argType="com.diegoribeiro.marvelguide.model.Character" />
+        <action
+            android:id="@+id/action_detailsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

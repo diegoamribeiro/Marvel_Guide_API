@@ -3,24 +3,25 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+    android:layout_margin="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="5dp"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
         >
 
         <ImageView
             android:id="@+id/iv_photo"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:contentDescription="@string/hero_image"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
             android:scaleType="centerCrop"
+            android:contentDescription="@string/hero_image"
             app:cardBackgroundColor="@color/grey"
             app:layout_constraintBottom_toTopOf="@+id/line"
             app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +33,7 @@
 
         <View
             android:id="@+id/line"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="8dp"
             android:background="@color/red"
             app:layout_constraintEnd_toEndOf="@+id/card"
@@ -42,12 +43,12 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card"
             style="@style/CardViewStyle"
-            android:layout_width="180dp"
+            android:layout_width="0dp"
             android:layout_height="80dp"
-            app:cardBackgroundColor="@color/black"
+            app:cardBackgroundColor="@color/soft_black"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/iv_photo"
-            app:layout_constraintStart_toStartOf="@+id/iv_photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/line">
 
             <androidx.constraintlayout.widget.ConstraintLayout
