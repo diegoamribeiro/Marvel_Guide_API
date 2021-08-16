@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
 import com.bumptech.glide.Glide
+import com.diegoribeiro.marvelguide.R
 import com.diegoribeiro.marvelguide.databinding.FragmentDetailsBinding
 import com.diegoribeiro.marvelguide.databinding.FragmentHomeBinding
 import com.diegoribeiro.marvelguide.ui.details.DetailsFragmentArgs
@@ -30,12 +32,11 @@ class DetailsFragment : Fragment() {
             .load(args.currentCharacter.thumbnail.path + STANDARD_LARGE + ".${args.currentCharacter.thumbnail.extension}")
             .into(binding.ivDetails)
 
-
         binding.btCurrentInfo.setOnClickListener {
-            binding.currentExternalInfo.apply {
-                webViewClient = WebViewClient()
-                loadUrl(args.currentCharacter.urls[0].url)
+            val bundle = Bundle().apply {
+                putSerializable("characterInfo", args.currentCharacter.urls[0].url)
             }
+            findNavController().navigate(R.id.action_detailsFragment_to_infoFragment, bundle)
         }
 
 
