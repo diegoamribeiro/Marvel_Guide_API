@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
+import android.widget.Toast
 import androidx.navigation.fragment.navArgs
 import com.diegoribeiro.marvelguide.databinding.FragmentInfoBinding
 import com.diegoribeiro.marvelguide.model.Character
@@ -24,18 +25,23 @@ class InfoFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentInfoBinding.inflate(inflater, container, false)
 
-        val bundle = Bundle()
-        val result = bundle.getString("characterInfo")
-        //val value = args.infoArgs.urls[0].url
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
 
         binding.webView.apply {
-            Log.d("***Passou", "$result")
+            Log.d("***Passou", "${args.infoArgs.urls[0].url}")
             webViewClient = WebViewClient()
-            loadUrl(result!!)
-        }
+            if (args.infoArgs.urls[0].url != null){
+                loadUrl(args.infoArgs.urls[0].url)
+            }else{
+                Toast.makeText(requireContext(), "No info", Toast.LENGTH_SHORT).show()
+            }
 
-        return binding.root
+        }
     }
 
 

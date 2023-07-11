@@ -1,5 +1,6 @@
 package com.diegoribeiro.marvelguide.ui.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
@@ -12,6 +13,7 @@ import com.diegoribeiro.marvelguide.model.Character
 import com.diegoribeiro.marvelguide.ui.home.HomeFragmentDirections
 import com.diegoribeiro.marvelguide.utils.Constants.Companion.STANDARD_LARGE
 import com.diegoribeiro.marvelguide.utils.DiffUtilsHome
+import kotlin.math.log
 
 class AdapterHome : RecyclerView.Adapter<AdapterHome.HomeViewHolder>(){
 
@@ -33,6 +35,7 @@ class AdapterHome : RecyclerView.Adapter<AdapterHome.HomeViewHolder>(){
                 .into(ivPhoto)
         }
         holder.itemView.setOnClickListener {
+            Log.d("***Hero", heroList[position].toString())
             val action = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(heroList[position])
             holder.itemView.findNavController().navigate(action)
         }

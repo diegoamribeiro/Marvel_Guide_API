@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
@@ -30,11 +31,8 @@ class DetailsFragment : Fragment() {
             .into(binding.ivDetails)
 
         binding.btCurrentInfo.setOnClickListener {
-            val bundle = Bundle().apply {
-                putString("characterInfo", args.currentCharacter.urls[0].url)
-                Log.d("***Enviou", args.currentCharacter.urls[0].url)
-            }
-            findNavController().navigate(R.id.action_detailsFragment_to_infoFragment, bundle)
+            val action = DetailsFragmentDirections.actionDetailsFragmentToInfoFragment(args.currentCharacter)
+            NavHostFragment.findNavController(this).navigate(action)
         }
 
 
